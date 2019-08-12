@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>我的第一篇博客文章 | Hexo</title>
+  <title>Genus入门 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="ASIC,Deep Learning,ICer">
+  <meta name="description" content="由于项目需要使用Genus综合，特开此篇博客记录学习点滴 一、run.tcl命令解释1::legacy::set_attribute common_ui false /  如果使用Common UI调用Genus，则使用以下属性在Legacy UI中运行Genus 1set DESIGN dtmf_recvr_core  把变量名指定为顶层设计名称 123set SYN_EFF mediumset">
+<meta name="keywords" content="ASIC,Deep Learning,ICer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我的第一篇博客文章">
-<meta property="og:url" content="http://yoursite.com/2019/08/10/我的第一篇博客文章/index.html">
+<meta property="og:title" content="Genus入门">
+<meta property="og:url" content="http://yoursite.com/2019/08/12/Genus入门/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="由于项目需要使用Genus综合，特开此篇博客记录学习点滴 一、run.tcl命令解释1::legacy::set_attribute common_ui false /  如果使用Common UI调用Genus，则使用以下属性在Legacy UI中运行Genus 1set DESIGN dtmf_recvr_core  把变量名指定为顶层设计名称 123set SYN_EFF mediumset">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-08-10T01:51:44.772Z">
+<meta property="og:updated_time" content="2019-08-12T12:24:57.986Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的第一篇博客文章">
+<meta name="twitter:title" content="Genus入门">
+<meta name="twitter:description" content="由于项目需要使用Genus综合，特开此篇博客记录学习点滴 一、run.tcl命令解释1::legacy::set_attribute common_ui false /  如果使用Common UI调用Genus，则使用以下属性在Legacy UI中运行Genus 1set DESIGN dtmf_recvr_core  把变量名指定为顶层设计名称 123set SYN_EFF mediumset">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -152,27 +155,40 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-我的第一篇博客文章" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Genus入门" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      我的第一篇博客文章
+      Genus入门
     </h1>
   
 
         
-        <a href="/2019/08/10/我的第一篇博客文章/" class="archive-article-date">
-  	<time datetime="2019-08-10T01:51:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-10</time>
+        <a href="/2019/08/12/Genus入门/" class="archive-article-date">
+  	<time datetime="2019-08-12T11:53:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>由于项目需要使用Genus综合，特开此篇博客记录学习点滴</p>
+<h1 id="一、run-tcl命令解释"><a href="#一、run-tcl命令解释" class="headerlink" title="一、run.tcl命令解释"></a>一、run.tcl命令解释</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">::legacy::set_attribute common_ui false /</span><br></pre></td></tr></table></figure>
+
+<p>如果使用Common UI调用Genus，则使用以下属性在Legacy UI中运行Genus</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set DESIGN dtmf_recvr_core</span><br></pre></td></tr></table></figure>
+
+<p>把变量名指定为顶层设计名称</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set SYN_EFF medium</span><br><span class="line">set MAP_EFF medium</span><br><span class="line">set OPT_EFF medium</span><br></pre></td></tr></table></figure>
+
+<p>三个变量表示综合的不同阶段的工作量（synthesize to generic,to gates,optimization）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set DATE [clock format [clock seconds] -format &quot;%b%d-%T&quot;]</span><br><span class="line">set _OUTPUTS_PATH outputs_$&#123;DATE&#125;</span><br><span class="line">set _REPORTS_PATH reports_$&#123;DATE&#125;</span><br><span class="line">set _LOG_PATH logs_$&#123;DATE&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上几个命令用来建立存放reports,dbs和logfiles的目录</p>
+
       
 
       
@@ -251,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/10/我的第一篇博客文章/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/12/Genus入门/" alt="微信分享二维码">
     </div>
 </div>
 
