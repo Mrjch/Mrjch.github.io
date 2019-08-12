@@ -186,6 +186,20 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">set DATE [clock format [clock seconds] -format &quot;%b%d-%T&quot;]</span><br><span class="line">set _OUTPUTS_PATH outputs_$&#123;DATE&#125;</span><br><span class="line">set _REPORTS_PATH reports_$&#123;DATE&#125;</span><br><span class="line">set _LOG_PATH logs_$&#123;DATE&#125;</span><br></pre></td></tr></table></figure>
 
 <p>以上几个命令用来建立存放reports,dbs和logfiles的目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set_attribute init_lib_search_path &#123;. ../LIB&#125; / </span><br><span class="line">set_attribute script_search_path &#123;. ../scripts&#125; / </span><br><span class="line">set_attribute init_hdl_search_path &#123;. ../RTL&#125; /</span><br></pre></td></tr></table></figure>
+
+<p>上面三个属性用来指定cell libraries，script，RTL搜索路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">if &#123;![file exists $&#123;_LOG_PATH&#125;]&#125; &#123;</span><br><span class="line">	file mkdir $&#123;_LOG_PATH&#125;</span><br><span class="line">	puts &quot;Creating directory $&#123;_LOG_PATH&#125;&quot; </span><br><span class="line">&#125;</span><br><span class="line">if &#123;![file exists $&#123;_OUTPUTS_PATH&#125;]&#125; &#123;</span><br><span class="line">	file mkdir $&#123;_OUTPUTS_PATH&#125;</span><br><span class="line">	puts &quot;Creating directory $&#123;_OUTPUTS_PATH&#125;&quot; </span><br><span class="line">&#125; </span><br><span class="line">if &#123;![file exists $&#123;_REPORTS_PATH&#125;]&#125; &#123; </span><br><span class="line">	file mkdir $&#123;_REPORTS_PATH&#125;  </span><br><span class="line">	puts &quot;Creating directory $&#123;_REPORTS_PATH&#125;&quot; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建必要的文件目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set_attribute syn_generic_effort $SYN_EFF /</span><br><span class="line">set_attribute syn_map_effort $MAP_EFF /</span><br><span class="line">set_attribute syn_opt_effort $OPT_EFF /</span><br></pre></td></tr></table></figure>
+
+<p>设置综合每一阶段的综合工作量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_attribute max_cpus_per_server 8 /</span><br></pre></td></tr></table></figure>
+
+<p>综合过程中超线程数目</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_attribute information_level 9 /</span><br></pre></td></tr></table></figure>
+
 
       
 
