@@ -216,6 +216,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">read_hdl &quot; *.v&quot;</span><br><span class="line">elaborate $DESIGN</span><br><span class="line">time_info Elaboration </span><br><span class="line">check_design -unresolved</span><br></pre></td></tr></table></figure>
 
 <p>以上命令功能分别为：加载RLT设计到Genus内存。<br>elaborate顶层设计<br>报告此阶段使用的运行时间和内存<br>优先检查未解决的实例（以确保综合的准确性）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">read_sdc ../Constraints/dtmf_recvr_core_gate.sdc</span><br></pre></td></tr></table></figure>
+
+<p>上面命令读取约束文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">report timing -lint</span><br></pre></td></tr></table></figure>
+
+<p>以上命令生成lint报告，此报告简略输出设计中可能存在的时序问题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">if &#123;[llength [all::all_seqs]] &gt; 0&#125; &#123; </span><br><span class="line"> 		define_cost_group -name I2C -design $DESIGN</span><br><span class="line"> 		define_cost_group -name C2O -design $DESIGN</span><br><span class="line"> 		define_cost_group -name C2C -design $DESIGN</span><br><span class="line"> 		path_group -from [all::all_seqs] -to [all::all_seqs] -group C2C -name C2C</span><br><span class="line"> 		path_group -from [all::all_seqs] -to [all::all_outs] -group C2O -name C2O</span><br><span class="line"> 		path_group -from [all::all_inps]  -to [all::all_seqs] -group I2C -name I2C</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">define_cost_group -name I2O -design $DESIGN</span><br><span class="line">path_group -from [all::all_inps]  -to [all::all_outs] -group I2O -name I2O</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">syn_generic</span><br><span class="line">syn_map</span><br></pre></td></tr></table></figure>
+
+<p>以上命令执行通用综合和全局映射</p>
 
       
 
