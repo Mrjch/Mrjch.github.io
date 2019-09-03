@@ -4,6 +4,19 @@
   
     
     <entry>
+      <title>testbench中阻塞赋值和非阻塞赋值的问题</title>
+      <link href="/2019/09/03/testbench%E4%B8%AD%E9%98%BB%E5%A1%9E%E8%B5%8B%E5%80%BC%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E%E8%B5%8B%E5%80%BC%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+      <url>/2019/09/03/testbench%E4%B8%AD%E9%98%BB%E5%A1%9E%E8%B5%8B%E5%80%BC%E5%92%8C%E9%9D%9E%E9%98%BB%E5%A1%9E%E8%B5%8B%E5%80%BC%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+      
+        <content type="html"><![CDATA[<p>今天写仿真文件时遇到了阻塞赋值和非阻塞赋值会出现不同的仿真结果，原因未知，占坑</p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Genus入门</title>
       <link href="/2019/08/12/Genus%E5%85%A5%E9%97%A8/"/>
       <url>/2019/08/12/Genus%E5%85%A5%E9%97%A8/</url>
